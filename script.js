@@ -41,9 +41,10 @@ ScrollReveal().reveal(".home-contact h1,.about-content,.skills, .edu-content",{o
 ScrollReveal().reveal(".home-contact p,.about-img",{origin: "right"});
 
 const typed=new Typed(".multiple-text",{
-    strings: ["Frontend Developer","MySQL Developer"],
+    strings: ["React JS Developer","MySQL Developer","MERN Stack Developer"],
     typeSpeed: 70,
     backSpeed: 70,
     backDelay: 1000,
     loop: true,
 });
+
