@@ -47,3 +47,49 @@ const typed=new Typed(".multiple-text",{
     backDelay: 1000,
     loop: true,
 });
+
+
+
+const certCards = document.getElementById('certCards');
+const nextBtn = document.getElementById('next');
+const prevBtn = document.getElementById('prev');
+
+const scrollAmount = 320;
+
+
+nextBtn.addEventListener('click', () => {
+  certCards.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+});
+
+
+prevBtn.addEventListener('click', () => {
+  certCards.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+});
+
+
+function updateButtons() {
+  const scrollLeft = certCards.scrollLeft;
+  const maxScroll = certCards.scrollWidth - certCards.clientWidth;
+
+  
+  if (scrollLeft <= 0) {
+    prevBtn.style.display = 'none';
+  } else {
+    prevBtn.style.display = 'block';
+  }
+
+  
+  if (scrollLeft >= maxScroll - 1) {
+    nextBtn.style.display = 'none';
+  } else {
+    nextBtn.style.display = 'block';
+  }
+}
+
+certCards.addEventListener('scroll', updateButtons);
+
+updateButtons();
+
+
+
+
