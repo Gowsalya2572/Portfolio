@@ -151,7 +151,7 @@ span{
     background: var(--snd-bg-color);
 }
 .about-img img{
-     width: 23vw;/* 35vw */
+     width: 23vw;
      padding: 0 30px;
     
 }
@@ -160,7 +160,7 @@ span{
   font-size: 4.5rem;
 }
 .about-content h2{
-    margin-bottom: 20px;  /*add me */
+    margin-bottom: 20px;  
     line-height: 1.2;
 }
 .about-content h3{
@@ -655,16 +655,28 @@ span{
   right: -30px;
 }
 
-/* Responsive layout */
-@media (max-width: 768px) {
-  .cert-card {
-    flex: 0 0 250px;
+@media (max-width: 992px) {
+  .cert-slider {
+    max-width: 700px;
   }
+  .cert-card {
+    flex: 0 0 calc((700px - 20px) / 2);
+  }
+}
+
+@media (max-width: 600px) {
+  .cert-slider {
+    max-width: 350px;
+  }
+  .cert-card {
+    flex: 0 0 100%;
+  }
+
   #prev {
     left: 5px;
   }
+
   #next {
     right: 5px;
   }
 }
-
