@@ -41,7 +41,7 @@ ScrollReveal().reveal(".home-contact h1,.about-content,.skills, .edu-content",{o
 ScrollReveal().reveal(".home-contact p,.about-img",{origin: "right"});
 
 const typed=new Typed(".multiple-text",{
-    strings: ["React JS Developer","MySQL Developer","MERN Stack Developer"],
+    strings: ["MERN Stack Developer","Backend Developer","React JS Developer"],
     typeSpeed: 70,
     backSpeed: 70,
     backDelay: 1000,
