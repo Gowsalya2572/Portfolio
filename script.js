@@ -44,7 +44,7 @@ ScrollReveal().reveal(".home-contact h1,.about-content,.skills, .edu-content", {
 ScrollReveal().reveal(".home-contact p,.about-img", { origin: "right" });
 
 const typed = new Typed(".multiple-text", {
-  strings: ["MERN Stack Developer", "Backend Developer", "React JS Developer"],
+  strings: ["MERN Stack Developer", "Frontend Developer", "React JS Developer", "Web Developer"],
   typeSpeed: 70,
   backSpeed: 70,
   backDelay: 1000,
@@ -96,3 +96,41 @@ updateButtons();
 
 
 
+
+//form
+const form = document.getElementById("contact-form");
+const successMessage = document.getElementById("success-message");
+
+form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+
+    try {
+        const response = await fetch(form.action, {
+            method: "POST",
+            body: formData,
+            headers: {
+                Accept: "application/json"
+            }
+        });
+
+        if (response.ok) {
+            successMessage.style.display = "block";
+            successMessage.innerHTML =
+                "✅ Thank you for contacting me! Your message has been sent successfully. I'll get back to you soon.";
+
+            form.reset();
+
+            setTimeout(() => {
+                successMessage.style.display = "none";
+            }, 5000);
+
+        } else {
+            alert("Failed to send message. Please try again.");
+        }
+
+    } catch (error) {
+        alert("Something went wrong. Please try again.");
+    }
+});
