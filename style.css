@@ -227,121 +227,341 @@ span{
 
 
 /* skills */
-.container{
-    position: relative;
-    max-width: 900px;
-    width: 100%;
-    margin: auto;
-    padding: 10px 20px;
-    border-radius: 7px;
-    
+/*==================== SKILLS ====================*/
+
+.skills{
+    padding: 8rem 9%;
+    background: var(--bg-color);
 }
-.container .skill-box{
-    width: 100%;
-    margin: 15px 0;
+
+.skills .heading{
+    text-align: center;
+    margin-bottom: 1.5rem;
 }
-.column {
-   width: 100%;
-   display: grid;
-   grid-template-columns: repeat(2,1fr); 
-   column-gap: 30px ;
-   row-gap: 5px;
-}
-.skill-box .title{
-    display: block;
-    font-size: 18px;
-    font-weight: 600;
-    color:var(--text-color);
-}
-.skill-box .skill-bar{
-    height: 10px;
-    width: 100%;
-    border-radius: 5px;
-    margin-top: 3px;
-    background: var(--text-color);
-}
-.skill-bar .skill-per{
-    position: relative;
-    display: block;
-    height: 100%;
-    width: 100%;
-    border-radius: 6px;
-    background: var(--main-color);
-    animation: progress 0.4s ease-in-out forwards;
-    opacity: 0;
-}
-.skill-per.html{
-    width: 90%;
-    animation-delay: 0.1s;
-}
-.skill-per.mysql{
-    width: 85%;
-    animation-delay: 0.1s;
-}
-.skill-per.powerbi{
-    width: 70%;
-    animation-delay: 0.1s;
-}
-.skill-per.problem{
-    width: 80%;
-    animation-delay: 0.1s;
-}
-.skill-per.adaptability{
-    width: 85%;
-    animation-delay: 0.1s;
-}
-.skill-per.c{
-    width: 75%;
-    animation-delay: 0.1s;
-}
-.skill-per.css{
-    width: 80%;
-    animation-delay: 0.1s;
-}
-.skill-per.javascript{
-    width: 85%;
-    animation-delay: 0.1s;
-}
-.skill-per.team{
-    width: 90%;
-    animation-delay: 0.1s;
-}
-.skill-per.reactjs{
-    width: 60%;
-    animation-delay: 0.1s;
-}
-@keyframes progress {
-    0%{
-        width: 0;
-        opacity: 1;
-    }
-    100%{
-        opacity: 1;
-    }
-}
-.skill-per .tooltip{
-    position: absolute;
-    right: -14px;
-    top: -28px;
-    font-size: 9px;
-    font-weight: 500;
+
+.skills-text{
+    max-width: 750px;
+    margin: 0 auto 5rem;
+    text-align: center;
+    font-size: 1.7rem;
     color: var(--text-color);
-    padding: 2px 6px;
-    border-radius: 3px;
-    background: var(--main-color);
-    z-index: 1;
+    line-height: 1.8;
+    opacity: .9;
 }
-.tooltip::before{
-    content: '';
-    position: absolute;
-    left: 50%;
-    bottom: -2px;
-    height: 10px;
-    width: 10px;
-    z-index: -1;
-    background-color: var(--main-color);
-    transform: translateX(-50%) rotate(45deg);
+
+/* Container */
+
+.skills-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(400px,1fr));
+    gap: 3rem;
 }
+
+/* Column */
+
+.skills-column{
+
+    background: var(--snd-bg-color);
+
+    border-radius: 1.5rem;
+
+    padding: 2.5rem;
+
+    transition: .4s ease;
+
+    border: 1px solid transparent;
+
+}
+
+.skills-column:hover{
+
+    transform: translateY(-8px);
+
+    border-color: var(--main-color);
+
+    box-shadow: 0 15px 35px rgba(89,178,244,.18);
+
+}
+
+/* Category */
+
+.category-title{
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 1rem;
+
+    font-size: 2.2rem;
+
+    margin-bottom: 2.5rem;
+
+    color: var(--main-color);
+
+}
+
+.category-title i{
+
+    font-size: 2.8rem;
+
+}
+
+.professional{
+
+    margin-top: 4rem;
+
+}
+
+/* Skill Box */
+
+.skill-box{
+
+    margin-bottom: 2.2rem;
+
+}
+
+/* Title */
+
+.skill-title{
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: .8rem;
+
+}
+
+.skill-title span{
+
+    font-size: 1.6rem;
+
+    color: var(--text-color);
+
+    font-weight: 600;
+
+}
+
+.skill-title span:first-child{
+
+    display: flex;
+
+    align-items: center;
+
+    gap: .8rem;
+
+}
+
+.skill-title i{
+
+    font-size: 2rem;
+
+    color: var(--main-color);
+
+}
+
+/* Progress Background */
+
+.skill-bar{
+
+    width: 100%;
+
+    height: 12px;
+
+    background: rgba(255,255,255,.12);
+
+    border-radius: 50px;
+
+    overflow: hidden;
+
+}
+
+/* Progress */
+
+.skill-per{
+
+    display: block;
+
+    height: 100%;
+
+    border-radius: 50px;
+
+    width: 0;
+
+    background: linear-gradient(
+        90deg,
+        var(--main-color),
+        #8bd0ff
+    );
+
+}
+
+/* Hover */
+
+.skill-box:hover .skill-title{
+
+    color: var(--main-color);
+
+}
+
+/* Progress Width */
+
+.skill-per.html{
+
+    width:90%;
+
+}
+
+.skill-per.css{
+
+    width:85%;
+
+}
+
+.skill-per.javascript{
+
+    width:85%;
+
+}
+
+.skill-per.react{
+
+    width:80%;
+
+}
+
+.skill-per.bootstrap{
+
+    width:85%;
+
+}
+
+.skill-per.node{
+
+    width:70%;
+
+}
+
+.skill-per.express{
+
+    width:70%;
+
+}
+
+.skill-per.mongo{
+
+    width:70%;
+
+}
+
+.skill-per.mysql{
+
+    width:80%;
+
+}
+
+.skill-per.git{
+
+    width:75%;
+
+}
+
+.skill-per.powerbi{
+
+    width:70%;
+
+}
+
+.skill-per.problem{
+
+    width:85%;
+
+}
+
+.skill-per.team{
+
+    width:90%;
+
+}
+
+.skill-per.adaptability{
+
+    width:85%;
+
+}
+
+/* Animation */
+
+.skill-per.animate{
+
+    animation: progressBar 1.5s ease forwards;
+
+}
+
+@keyframes progressBar{
+
+    from{
+
+        width:0;
+
+    }
+
+}
+
+/* Responsive */
+
+@media(max-width:991px){
+
+.skills{
+
+    padding:7rem 4%;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.skills-container{
+
+    grid-template-columns:1fr;
+
+}
+
+}
+
+@media(max-width:500px){
+
+.skills-column{
+
+    padding:2rem;
+
+}
+
+.skill-title span{
+
+    font-size:1.4rem;
+
+}
+
+.category-title{
+
+    font-size:2rem;
+
+}
+
+.skills-text{
+
+    font-size:1.5rem;
+
+}
+
+}
+
+
 /* contact section */
 .contact{
     padding:8rem 9%;

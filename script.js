@@ -52,6 +52,67 @@ const typed = new Typed(".multiple-text", {
 });
 
 
+// ================================
+// Skills Progress Bar Animation
+// ================================
+
+const skillsSection = document.querySelector("#skills");
+const progressBars = document.querySelectorAll(".skill-per");
+
+let animated = false;
+
+function animateSkills() {
+
+    if (animated) return;
+
+    const sectionTop = skillsSection.getBoundingClientRect().top;
+    const triggerPoint = window.innerHeight - 150;
+
+    if (sectionTop < triggerPoint) {
+
+        progressBars.forEach((bar) => {
+
+            const width = bar.style.width || window.getComputedStyle(bar).width;
+
+            // Save the final width
+            const finalWidth = bar.classList.contains("html") ? "90%" :
+                               bar.classList.contains("css") ? "85%" :
+                               bar.classList.contains("javascript") ? "85%" :
+                               bar.classList.contains("react") ? "80%" :
+                               bar.classList.contains("bootstrap") ? "85%" :
+                               bar.classList.contains("node") ? "70%" :
+                               bar.classList.contains("express") ? "70%" :
+                               bar.classList.contains("mongo") ? "70%" :
+                               bar.classList.contains("mysql") ? "80%" :
+                               bar.classList.contains("git") ? "75%" :
+                               bar.classList.contains("powerbi") ? "70%" :
+                               bar.classList.contains("problem") ? "85%" :
+                               bar.classList.contains("team") ? "90%" :
+                               bar.classList.contains("adaptability") ? "85%" :
+                               "0%";
+
+            bar.style.width = "0";
+
+            setTimeout(() => {
+                bar.style.transition = "width 1.5s ease";
+                bar.style.width = finalWidth;
+            }, 100);
+
+        });
+
+        animated = true;
+
+    }
+
+}
+
+window.addEventListener("scroll", animateSkills);
+window.addEventListener("load", animateSkills);
+
+
+
+
+// certification
 
 const certCards = document.getElementById('certCards');
 const nextBtn = document.getElementById('next');
@@ -97,7 +158,7 @@ updateButtons();
 
 
 
-//form
+//contact
 const form = document.getElementById("contact-form");
 const successMessage = document.getElementById("success-message");
 
