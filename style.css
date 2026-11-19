@@ -153,73 +153,188 @@ span{
 /*about */
 
 
-/* ABOUT SECTION */
+
 .about {
-  display: flex;
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
   align-items: center;
-  justify-content: center;
   gap: 6rem;
   padding: 10rem 9%;
   background: var(--snd-bg-color);
 }
 
-/* Image */
-.about-img {
-  position: relative;
-  flex: 0 0 38%;
-  max-width: 420px;
-}
+/* ================= PROFILE CARD ================= */
 
-.image-wrapper {
+.about-profile {
   position: relative;
-  padding: 1.2rem;
-  border-radius: 2rem;
-  border: 2px solid var(--main-color);
   overflow: hidden;
+  padding: 3.5rem;
+  border: 1px solid rgba(89, 178, 244, 0.3);
+  border-radius: 2rem;
+  background: linear-gradient(
+    145deg,
+    #262840,
+    #191f36
+  );
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+  isolation: isolate;
 }
 
-.about-img img {
-  display: block;
-  width: 100%;
-  height: 460px;
-  object-fit: cover;
-  border-radius: 1.4rem;
-  transition: transform 0.4s ease;
+.profile-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
-.about-img:hover img {
-  transform: scale(1.04);
+.profile-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 6rem;
+  height: 6rem;
+  border-radius: 1.5rem;
+  background: rgba(89, 178, 244, 0.15);
+  color: var(--main-color);
+  font-size: 2.8rem;
 }
 
-/* Graduate badge */
-.experience-badge {
-  position: absolute;
-  right: -2rem;
-  bottom: 3rem;
+.profile-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.8rem 1.2rem;
+  border: 1px solid rgba(46, 204, 113, 0.3);
+  border-radius: 3rem;
+  color: #7ee2a8;
+  font-size: 1.15rem;
+}
+
+.status-dot {
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 50%;
+  background: #2ecc71;
+  box-shadow: 0 0 8px rgba(46, 204, 113, 0.7);
+}
+
+.profile-main {
+  position: relative;
+  z-index: 1;
+  margin-top: 5rem;
+}
+
+.profile-label {
+  color: var(--main-color);
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin-bottom: 1rem;
+}
+
+.profile-main h3 {
+  color: #fff;
+  font-size: clamp(3rem, 4vw, 4.5rem);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.profile-main h3 span {
+  color: var(--main-color);
+}
+
+.profile-role {
+  color: var(--main-color);
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.profile-description {
+  color: #c6c9d8;
+  font-size: 1.5rem;
+  line-height: 1.8;
+  max-width: 38rem;
+}
+
+.profile-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.12);
+  margin: 3rem 0;
+}
+
+.profile-details {
   display: flex;
   flex-direction: column;
+  gap: 2rem;
+}
+
+.profile-detail {
+  display: flex;
   align-items: center;
-  padding: 1.5rem 2.2rem;
-  border-radius: 1.2rem;
-  background: var(--main-color);
-  color: #fff;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  gap: 1.5rem;
 }
 
-.experience-badge span {
-  font-size: 2.5rem;
-  font-weight: 800;
+.profile-detail > i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 4.2rem;
+  height: 4.2rem;
+  border-radius: 1rem;
+  background: rgba(89, 178, 244, 0.12);
+  color: var(--main-color);
+  font-size: 1.8rem;
 }
 
-.experience-badge small {
+.profile-detail div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.profile-detail small {
+  color: #aeb3c7;
   font-size: 1.2rem;
-  font-weight: 500;
 }
 
-/* Content */
+.profile-detail strong {
+  color: #fff;
+  font-size: 1.45rem;
+  font-weight: 600;
+}
+
+/* Decorative circles */
+
+.profile-decoration {
+  position: absolute;
+  z-index: -1;
+  border: 1px solid rgba(89, 178, 244, 0.12);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.decoration-one {
+  width: 22rem;
+  height: 22rem;
+  top: -10rem;
+  right: -8rem;
+}
+
+.decoration-two {
+  width: 16rem;
+  height: 16rem;
+  top: -7rem;
+  right: -5rem;
+}
+
+/* ================= ABOUT CONTENT ================= */
+
 .about-content {
-  flex: 1;
   max-width: 650px;
+  width: 100%;
 }
 
 .about-subtitle {
@@ -241,7 +356,7 @@ span{
 }
 
 .about-content h3 {
-  font-size: 2.5rem;
+  font-size: 2.4rem;
   font-weight: 700;
   margin-bottom: 2rem;
   line-height: 1.4;
@@ -255,41 +370,47 @@ span{
   opacity: 0.85;
 }
 
-/* Skills */
-.about-skills {
+/* ================= HIGHLIGHTS ================= */
+
+.about-highlights {
   display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
+  flex-direction: column;
+  gap: 1.5rem;
   margin: 2.5rem 0 3rem;
 }
 
-.about-skills span {
-  display: inline-flex;
+.highlight-item {
+  display: flex;
   align-items: center;
-  gap: 0.8rem;
-  padding: 1rem 1.4rem;
-  border-radius: 0.8rem;
-  border: 1px solid var(--main-color);
-  color: var(--text-color);
-  font-size: 1.3rem;
-  font-weight: 500;
-  transition: 0.3s ease;
+  gap: 1.5rem;
 }
 
-.about-skills span i {
+.highlight-item > i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4.5rem;
+  height: 4.5rem;
+  flex-shrink: 0;
+  border-radius: 1rem;
+  background: rgba(89, 178, 244, 0.12);
   color: var(--main-color);
+  font-size: 1.8rem;
 }
 
-.about-skills span:hover {
-  background: var(--main-color);
-  color: #fff;
+.highlight-item h4 {
+  font-size: 1.5rem;
+  margin-bottom: 0.4rem;
 }
 
-.about-skills span:hover i {
-  color: #fff;
+.highlight-item p {
+  color: var(--text-color);
+  opacity: 0.7;
+  font-size: 1.3rem;
 }
 
-/* Buttons */
+/* ================= BUTTON ================= */
+
 .about-buttons {
   display: flex;
   flex-wrap: wrap;
@@ -315,57 +436,56 @@ span{
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
 }
 
-.about-buttons .btn-outline {
-  background: transparent;
-  border: 2px solid var(--main-color);
-  color: var(--main-color);
-}
+/* ================= TABLET ================= */
 
-.about-buttons .btn-outline:hover {
-  background: var(--main-color);
-  color: #fff;
-}
-
-/* Tablet */
 @media (max-width: 991px) {
   .about {
-    gap: 4rem;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 3rem;
     padding: 8rem 5%;
   }
 
-  .about-img {
-    flex-basis: 35%;
+  .about-profile {
+    padding: 2.5rem;
   }
 
-  .about-img img {
-    height: 380px;
+  .profile-main h3 {
+    font-size: 3.3rem;
+  }
+
+  .profile-status {
+    font-size: 1rem;
   }
 
   .about-content h3 {
-    font-size: 2.2rem;
+    font-size: 2.1rem;
   }
 }
 
-/* Mobile */
+/* ================= MOBILE ================= */
+
 @media (max-width: 650px) {
   .about {
-    flex-direction: column;
+    grid-template-columns: 1fr;
     gap: 4rem;
     padding: 7rem 6%;
   }
 
-  .about-img {
-    width: 75%;
-    max-width: 320px;
+  .about-profile {
+    width: 100%;
+    padding: 2.5rem;
   }
 
-  .about-img img {
-    height: 350px;
+  .profile-main {
+    margin-top: 3.5rem;
   }
 
-  .experience-badge {
-    right: -1rem;
-    bottom: 2rem;
+  .profile-main h3 {
+    font-size: 3.5rem;
+  }
+
+  .profile-role {
+    font-size: 1.6rem;
   }
 
   .about-content {
@@ -394,14 +514,14 @@ span{
   }
 }
 
-/* Reduced motion */
+/* ================= REDUCED MOTION ================= */
+
 @media (prefers-reduced-motion: reduce) {
-  .about-img img,
-  .about-skills span,
   .about-buttons .btn {
     transition: none;
   }
 }
+
 
 
 /* education */
